@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +13,12 @@ import { ProyComponent } from './components/proy/proy.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { interceptorProvider } from './service/interceptor-service';
+import { NewexpComponent } from './components/exp/newexp.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditexpComponent } from './components/exp/editexp.component';
+import { NewducComponent } from './components/educ/newduc.component';
+import { EditeducComponent } from './components/educ/editeduc.component';
 
 @NgModule({
   declarations: [
@@ -26,15 +31,22 @@ import { HttpClientModule } from '@angular/common/http';
     ExpComponent,
     HysComponent,
     ProyComponent,
-    FooterComponent
+    FooterComponent,
+    NewexpComponent,
+    EditexpComponent,
+    NewducComponent,
+    EditeducComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

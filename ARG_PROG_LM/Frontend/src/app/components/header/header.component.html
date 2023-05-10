@@ -22,8 +22,12 @@
                 <!-- Right links -->
                 <div class="d-flex align-items-center">
                     <a class="btn btn-dark me-2" href="#" role="button"><i class="bi bi-github"></i></a>
-                    <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal" (click)="login()">Acceder</button>
-                    <button type="button" class="btn btn-danger">Cerrar sesión</button>
+                    <button type="button" class="btn btn-outline-primary px-3 me-2" data-bs-toggle="modal"
+                        data-bs-target="#loginModal" (click)="login()" *ngIf="!isLogged">
+                        Acceder
+                    </button>
+                    <button *ngIf="isLogged" type="button" class="btn btn-danger" (click)="onLogOut()">Cerrar
+                        sesión</button>
                 </div>
                 <!-- Right links -->
             </div>
